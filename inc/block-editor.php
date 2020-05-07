@@ -1,10 +1,20 @@
 <?php
 /**
- * Helps instantiatet the Block Selector Panel.
+ * Helps instantiate the Block Selector Panel.
  *
  * Currently also contains some diagnostic code.
  */
-//add_filter( 'render_block', 'show_the_block_constituents', 10, 2 );
+
+/**
+ * https://jeanbaptisteaudras.com/en/2020/03/disable-block-editor-default-fullscreen-mode-in-wordpress-5-4/
+ */
+function jba_disable_editor_fullscreen_by_default() {
+	$script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
+	wp_add_inline_script( 'wp-blocks', $script );
+}
+add_action( 'enqueue_block_editor_assets', 'jba_disable_editor_fullscreen_by_default' );
+
+// add_filter( 'render_block', 'show_the_block_constituents', 10, 2 );
 /**
  * [show_the_block_constituents] Debug code for showing the parts of WP Blocks
  *
