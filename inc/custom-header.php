@@ -42,6 +42,7 @@ if ( ! function_exists( 'gatherpress_header_style' ) ) :
 	 */
 	function gatherpress_header_style() {
 		$header_text_color = get_header_textcolor();
+		$header_text_color = get_theme_mod( 'header_textcolor' );
 
 		/*
 		 * If no custom options for text are set, let's bail.
@@ -76,3 +77,10 @@ if ( ! function_exists( 'gatherpress_header_style' ) ) :
 		<?php
 	}
 endif;
+
+
+function gatherpress_added_page_content( $content ) {
+	$theme_mods = get_theme_mods();
+	return $content . '<p>Your content added to all pages (not posts).</p>' . print_r( $theme_mods, true );
+}
+add_filter( 'the_content', 'gatherpress_added_page_content' );
