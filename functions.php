@@ -110,6 +110,14 @@ if ( ! function_exists( 'gatherpress_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		/**
+		 * Add block support.
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#comment-3661
+		 */
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'gatherpress_setup' );
