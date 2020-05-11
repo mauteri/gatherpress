@@ -15,12 +15,13 @@ export class AttendanceButton extends Component {
 
 	attendanceStatus( status ) {
 
-		if ( status.includes( 'attending' ) ) {
-			return __( 'Attending', 'gatherpress' );
-		} else if ( status.includes( 'not-attending' ) ) {
-			return __( 'Not Attending', 'gatherpress' );
-		} else if ( status.includes( 'waitlist' )  ) {
-			return __( 'On Waitlist', 'gatherpress' );
+		switch ( status ) {
+			case 'attending':
+				return __( 'Attending', 'gatherpress' );
+			case 'not_attending':
+				return __( 'Not Attending', 'gatherpress' );
+			case 'waitlist':
+				return __( 'On Waitlist', 'gatherpress' );
 		}
 
 		return __( 'Attend', 'gatherpress' );
@@ -58,14 +59,12 @@ export class AttendanceButton extends Component {
 		}).then( data => {
 
 			if ( data.success ) {
-				let attendanceStatus = this.attendanceStatus( [ data.status ] );
-
 				this.setState({
-					inputValue: attendanceStatus
+					inputValue: this.attendanceStatus( data.status )
 				});
 
-				updateAttendanceList( data.attendance );
-				updateActiveNavigation( [ data.status ] );
+				updateAttendanceList( data.attendees );
+				updateActiveNavigation( data.status );
 			}
 
 		});
@@ -108,7 +107,7 @@ export class AttendanceButton extends Component {
 							<a
 								className  = 'dropdown-item'
 								href       = '#'
-								data-value = 'not-attending'
+								data-value = 'not_attending'
 								onClick    = { ( evt ) => this.changeSelection( evt ) }
 							>
 								{ __( 'No, I cannot attend this event.', 'gatherpress' ) }

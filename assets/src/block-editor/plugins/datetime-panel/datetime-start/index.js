@@ -1,10 +1,9 @@
 import { DateTimePicker } from '@wordpress/components';
 import { __experimentalGetSettings } from '@wordpress/date';
 import { withState } from '@wordpress/compose';
+import { updateDateTimeStart, getDateTimeStart } from './label';
 
-export const DateTimeStart = withState( {
-	date: GatherPress.event_datetime.datetime_start,
-} )( ( { updateDateTimeStart, getDateTimeStart, setState } ) => {
+export const DateTimeStart = withState()( ( { setState } ) => {
 
 	const settings     = __experimentalGetSettings();
 	const is12HourTime = /a(?!\\)/i.test(
@@ -22,4 +21,3 @@ export const DateTimeStart = withState( {
 		/>
 	);
 } );
-
