@@ -1,7 +1,17 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
 #GatherPress Project
-_s
+
+## Elevator Pitch
+A WordPress/BuddyPress based solution to either complement or replace Meetup (as used by WordPress Meetups).
+
+## More Information
+A [Google Doc with more information about the project](https://docs.google.com/document/d/1BqkOGxkunkWdu9ic2CpYoZ-To147hUylb3BdBhQ3bQA/edit?usp=sharing) is available.
+
+## This Repository
+A theme to be used with GatherPress, based on the [_s starter theme](https://underscores.me/).
+
+## _s README Contents
 ===
 
 Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
