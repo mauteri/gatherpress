@@ -4,21 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package gatherpress
+ * @package Gather_UnderWind
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) && 'gp_event' !== get_post_type() ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
 
-<aside id="secondary" class="sidebar-area">
-	<div class="wrap">
-		<?php
-		if ( is_single() ) {
-			get_template_part( 'template-parts/sidebar', get_post_type() );
-		}
-		?>
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div>
+<aside id="secondary" class="widget-area">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

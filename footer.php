@@ -6,34 +6,29 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package gatherpress
+ * @package Gather_UnderWind
  */
 
 ?>
 
-		</div><!-- #content -->
+	<footer id="colophon" class="site-footer">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gather-underwind' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'gather-underwind' ), 'WordPress' );
+				?>
+			</a>
+			<span class="sep"> | </span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'gather-underwind' ), 'gather-underwind', '<a href="http://underscores.me/">Underscores.me</a>' );
+				?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
-		<footer id="colophon" class="site-footer bg-dark text-white-50 mt-4">
-			<div class="container-fluid py-3">
-				<div class="row">
-					<div class="col-md-6 small">
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gatherpress' ) ); ?>" class="text-white">
-							<?php
-							esc_html_e( 'Proudly powered by WordPress', 'gatherpress' );
-							?>
-						</a>
-					</div>
-					<div class="col-md-6 text-right small align-self-end">
-						<?php
-						printf( esc_html__( 'Copyright &copy; %d GatherPress. All rights reserved.', 'gatherpress' ), date( 'Y' ) );
-						?>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div><!-- #page -->
+<?php wp_footer(); ?>
 
-	<?php wp_footer(); ?>
-
-	</body>
+</body>
 </html>

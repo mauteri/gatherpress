@@ -4,14 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package gatherpress
+ * @package Gather_UnderWind
  */
 
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -19,7 +18,7 @@ get_header();
 				<h1 class="page-title">
 					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'gatherpress' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Search Results for: %s', 'gather-underwind' ), '<span>' . get_search_query() . '</span>' );
 					?>
 				</h1>
 			</header><!-- .page-header -->
@@ -47,8 +46,7 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	</main><!-- #main -->
 
 <?php
 get_sidebar();

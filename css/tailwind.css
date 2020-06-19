@@ -1,0 +1,9 @@
+
+body {
+	padding: 3rem;
+}
+#primary-menu > .menu-item {
+	padding: 1rem;
+	border: 1px solid crimson;
+	margin: 0 2px;
+}

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package gatherpress
+ * @package Gather_UnderWind
  */
 
 ?>
@@ -22,26 +22,42 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				gatherpress_posted_on();
-				gatherpress_posted_by();
+				gather_underwind_posted_on();
+				gather_underwind_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php gatherpress_post_thumbnail(); ?>
+	<?php gather_underwind_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		echo wp_kses_post( get_the_content() );
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gatherpress' ),
-			'after'  => '</div>',
-		) );
+		the_content(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gather-underwind' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				wp_kses_post( get_the_title() )
+			)
+		);
+
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gather-underwind' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php gatherpress_entry_footer(); ?>
+		<?php gather_underwind_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

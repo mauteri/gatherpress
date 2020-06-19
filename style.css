@@ -1,18 +1,12 @@
-/*
-Theme Name: GatherPress
-Theme URI: https://gatherpress.org/
-Description: GatherPress theme framework.
-Author: The GatherPress Community
-Author URI: https://gatherpress.org/
-Version: 0.3.8
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: gatherpress
-
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
-*/
+/**
+ * Plugin Name:     Gather UnderWind
+ * Plugin URI:      https://github.com/pbrocks/gather-underwind
+ * Description:     Custom blocks for WordPress.
+ * Author:          pbrocks
+ * Author URI:      https://github.com/pbrocks
+ * Text Domain:     gather-underwind
+ * Domain Path:     /languages
+ * Version:         0.1.1
+ *
+ * @package gather_underwind
+ */

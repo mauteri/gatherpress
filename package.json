@@ -1,0 +1,67 @@
+{
+	"name": "gather-underwind",
+	"version": "0.0.1",
+	"description": "Collection of Blocks and Filters",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pbrocks/gather-underwind.git"
+	},
+	"keywords": [
+		"audio",
+		"image"
+	],
+	"author": "",
+	"license": "GPL-2.0",
+	"bugs": {
+		"url": "https://github.com/pbrocks/gather-underwind/issues"
+	},
+	"homepage": "https://github.com/pbrocks/gather-underwind#readme",
+	"devDependencies": {
+		"@wordpress/components": "^8.3.2",
+		"@wordpress/scripts": "^9.0.0",
+		"autoprefixer": "^9.8.0",
+		"css-loader": "^3.2.0",
+		"dir-archiver": "^1.1.1",
+		"ignore-emit-webpack-plugin": "^2.0.2",
+		"mini-css-extract-plugin": "^0.8.2",
+		"node-sass": "^4.14.0",
+		"path": "^0.12.7",
+		"postcss-cli": "^7.1.1",
+		"postcss-loader": "^3.0.0",
+		"postcss-preset-env": "^6.7.0",
+		"rtlcss": "^2.5.0",
+		"sass-loader": "^7.1.0",
+		"tailwindcss": "^1.4.6"
+	},
+	"rtlcssConfig": {
+		"options": {
+			"autoRename": false,
+			"autoRenameStrict": false,
+			"blacklist": {},
+			"clean": true,
+			"greedy": false,
+			"processUrls": false,
+			"stringMap": []
+		},
+		"plugins": [],
+		"map": false
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+		"compile:rtl": "rtlcss style.css style-rtl.css",
+		"dev": "wp-scripts start",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js 'js/*.js'",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+		"start": "wp-scripts start",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js",
+		"watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w"
+	}
+}
