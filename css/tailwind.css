@@ -1,9 +1,16 @@
 
+@tailwind components;
+
+/** Your own components – checkout @apply */
+
+/** Tailwind utilities */
+@tailwind utilities;
+
 body {
 	padding: 3rem;
 }
-#primary-menu > .menu-item {
+#primary-menu > ul > li.page_item  {
 	padding: 1rem;
-	border: 1px solid crimson;
+	border: 1px solid green;
 	margin: 0 2px;
 }
