@@ -63,5 +63,8 @@
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
 		"watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w"
+	},
+	"dependencies": {
+		"postcss-import": "^12.0.1"
 	}
 }

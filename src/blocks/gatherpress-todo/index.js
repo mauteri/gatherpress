@@ -10,7 +10,7 @@ import { registerBlockType } from '@wordpress/blocks';
 registerBlockType( 'gatherpress/gatherpress-todo', {
 	title: __( 'GatherPress Todo List', 'gatherpress-todo' ),
 	icon: 'edit',
-	category: 'common',
+	category: 'gatherpress',
 	keywords: [
 		__( 'GatherPress', 'gatherpress-todo' ),
 		__( 'gatherpress-todo', 'gatherpress-todo' ),

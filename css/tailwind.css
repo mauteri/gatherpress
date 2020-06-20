@@ -7,10 +7,24 @@
 @tailwind utilities;
 
 body {
-	padding: 3rem;
+	padding: 1rem 3rem;
 }
+.site-branding > .site-title {
+	font-size: 3rem;
+	margin-bottom: 0;
+}
+
+.site-branding > .site-description {
+	font-size: 1.5rem;
+}
+
 #primary-menu > ul > li.page_item  {
 	padding: 1rem;
-	border: 1px solid green;
+	border: 1px solid #363248;
 	margin: 0 2px;
+}
+
+.edit-link,
+.cat-links  {
+	margin: 1rem;
 }

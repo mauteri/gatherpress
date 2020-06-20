@@ -20,7 +20,7 @@ const Edit = ( props ) => {
 
 	return (
 		<>
-			<h3>ToDo List</h3>
+			<h3>Today's List</h3>
 			<RichText
 				tagName="ul"
 				multiline="li"

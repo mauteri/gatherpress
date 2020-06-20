@@ -70,7 +70,7 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: 2em;
+	font-size: 2rem;
 	margin: 0.67em 0;
 }
 
@@ -93,7 +93,7 @@ hr {
  */
 pre {
 	font-family: monospace, monospace;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 /* Text-level semantics
@@ -132,7 +132,7 @@ code,
 kbd,
 samp {
 	font-family: monospace, monospace;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 /**
@@ -155,11 +155,11 @@ sup {
 }
 
 sub {
-	bottom: -0.25em;
+	bottom: -0.25rem;
 }
 
 sup {
-	top: -0.5em;
+	top: -0.5rem;
 }
 
 /* Embedded content
@@ -243,7 +243,7 @@ button:-moz-focusring,
  * Correct the padding in Firefox.
  */
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+	padding: 0.35em 0.75em 0.625rem;
 }
 
 /**
@@ -332,7 +332,7 @@ details {
  * Add the correct display in all browsers.
  */
 summary {
-	display: list-item;
+	display: list-itrem;
 }
 
 /* Misc
@@ -395,7 +395,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 
 dfn,
@@ -406,21 +406,21 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 1.5rem;
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", courier, monospace;
 	line-height: 1.6;
-	margin-bottom: 1.6em;
+	margin-bottom: 1.6rem;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 1.6rem;
 }
 
 code,
@@ -456,12 +456,12 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 3rem;
 }
 
 ul {
@@ -475,7 +475,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1.5rem;
 }
 
 dt {
@@ -483,7 +483,7 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 1.5em 1.5rem;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -503,7 +503,7 @@ figure {
 }
 
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 	width: 100%;
 }
 
@@ -514,7 +514,7 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: #363248;
 }
 
 a:hover,
@@ -544,7 +544,7 @@ input[type="submit"] {
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.6em 1em 0.4rem;
 }
 
 button:hover,
@@ -641,12 +641,12 @@ textarea {
 	float: left;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	left: -999rem;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	left: -999rem;
 	top: 0;
 }
 
@@ -696,7 +696,7 @@ textarea {
 .posts-navigation,
 .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 .comment-navigation .nav-links,
@@ -726,7 +726,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 .updated:not(.published) {
@@ -741,7 +741,7 @@ textarea {
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 /* Comments
@@ -757,7 +757,7 @@ textarea {
 /* Widgets
 --------------------------------------------- */
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 .widget select {
@@ -783,7 +783,7 @@ textarea {
 /* Captions
 --------------------------------------------- */
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 	max-width: 100%;
 }
 
@@ -804,9 +804,9 @@ textarea {
 /* Galleries
 --------------------------------------------- */
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 	display: grid;
-	grid-gap: 1.5em;
+	grid-gap: 1.5rem;
 }
 
 .gallery-item {
@@ -923,8 +923,8 @@ textarea {
 	float: left;
 
 	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+	margin-right: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .alignright {
@@ -933,8 +933,8 @@ textarea {
 	float: right;
 
 	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+	margin-left: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .aligncenter {
@@ -942,5 +942,5 @@ textarea {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
