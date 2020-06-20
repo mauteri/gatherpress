@@ -4,7 +4,7 @@ import classnames from "classnames";
  
 addFilter(
     "blocks.getBlockDefaultClassName",
-    "gather-underwind/custom-cover-block-class-name",
+    "gatherpress/custom-cover-block-class-name",
     customCoverClassName
 );
  

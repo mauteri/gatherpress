@@ -9,6 +9,6 @@ import './filters';
 import gatherPressIcon from './gatherpress-icon';
 
 // alter the icon slot
-wp.blocks.updateCategory( 'gather-underwind', {
+wp.blocks.updateCategory( 'gatherpress', {
     icon: gatherPressIcon
 } );

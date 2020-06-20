@@ -10,8 +10,8 @@ import {
 	InnerBlocks
 } from '@wordpress/block-editor';
 
-registerBlockType( 'gather-underwind/container', {
-	title: __( 'Starter Container', 'gather-underwind' ),
+registerBlockType( 'gatherpress/container', {
+	title: __( 'Starter Container', 'gatherpress' ),
 
 	description: __( 'Provide custom container.' ),
 
@@ -27,7 +27,7 @@ registerBlockType( 'gather-underwind/container', {
 		html: false,
 	},
 
-	category: 'gather-underwind',
+	category: 'gatherpress',
 
 	icon: 'editor-kitchensink',
 

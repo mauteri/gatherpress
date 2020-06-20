@@ -33,7 +33,7 @@ function gather_underwind_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details'    => array(
-				'stylesheet' => 'gather-underwind-style',
+				'stylesheet' => 'gatherpress-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',

@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gather-underwind' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gatherpress' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gather-underwind' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gatherpress' ),
 				'after'  => '</div>',
 			)
 		);

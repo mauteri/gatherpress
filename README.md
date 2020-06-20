@@ -1,6 +1,6 @@
-# gather-underwind
+# gatherpress
 
-gather-underwind
+gatherpress
 
 * https://roots.io/guides/how-to-setup-tailwind-css-in-sage/
 
@@ -18,9 +18,9 @@ gather-underwind
 [@wordpress/element] external {"this":["wp","element"]} 42 bytes {index} [built]
     + 8 hidden modules
 ^[[1;2A^C
-MBPro-15:gather-underwind apple$ npm run build
+MBPro-15:gatherpress apple$ npm run build
 
-> gather-underwind@0.0.1 build /Users/apple/Local Sites/taxonomy/app/public/wp-content/themes/gather-underwind
+> gatherpress@0.0.1 build /Users/apple/Local Sites/taxonomy/app/public/wp-content/themes/gatherpress
 > wp-scripts build
 
 

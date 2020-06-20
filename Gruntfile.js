@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		addtextdomain: {
 			options: {
-				textdomain: 'gather-underwind',
+				textdomain: 'gatherpress',
 			},
 			update_all_domains: {
 				options: {
@@ -32,8 +32,8 @@ module.exports = function( grunt ) {
 				options: {
 					domainPath: '/languages',
 					exclude: [ '\.git/*', 'bin/*', 'node_modules/*', 'tests/*' ],
-					mainFile: 'gather-underwind.php',
-					potFilename: 'gather-underwind.pot',
+					mainFile: 'gatherpress.php',
+					potFilename: 'gatherpress.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true

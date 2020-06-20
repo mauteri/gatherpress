@@ -1,11 +1,11 @@
 {
-	"name": "gather-underwind",
+	"name": "gatherpress",
 	"version": "0.0.1",
 	"description": "Collection of Blocks and Filters",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/pbrocks/gather-underwind.git"
+		"url": "git+https://github.com/pbrocks/gatherpress.git"
 	},
 	"keywords": [
 		"audio",
@@ -14,9 +14,9 @@
 	"author": "",
 	"license": "GPL-2.0",
 	"bugs": {
-		"url": "https://github.com/pbrocks/gather-underwind/issues"
+		"url": "https://github.com/pbrocks/gatherpress/issues"
 	},
-	"homepage": "https://github.com/pbrocks/gather-underwind#readme",
+	"homepage": "https://github.com/pbrocks/gatherpress#readme",
 	"devDependencies": {
 		"@wordpress/components": "^8.3.2",
 		"@wordpress/scripts": "^9.0.0",

@@ -8,7 +8,7 @@ const { PanelBody, RadioControl } = wp.components;
 
 const withMyAttributeControl = wp.compose.createHigherOrderComponent(BlockEdit => {
     return props => {
-        if (props.name !== "gather-underwind/container") {
+        if (props.name !== "gatherpress/container") {
             return <BlockEdit {...props} />;
         }
 
@@ -51,6 +51,6 @@ const withMyAttributeControl = wp.compose.createHigherOrderComponent(BlockEdit =
 
 wp.hooks.addFilter(
     "editor.BlockEdit",
-    "gather-underwind/container",
+    "gatherpress/container",
     withMyAttributeControl
 );

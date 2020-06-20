@@ -25,9 +25,9 @@ if ( ! function_exists( 'gather_underwind_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Second Gather, use a find and replace
-		 * to change 'gather-underwind' to the name of your theme in all the template files.
+		 * to change 'gatherpress' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'gather-underwind', get_template_directory_uri() . '/languages' );
+		load_theme_textdomain( 'gatherpress', get_template_directory_uri() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'gather_underwind_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'primary-menu' => esc_html__( 'Primary', 'gather-underwind' ),
+				'primary-menu' => esc_html__( 'Primary', 'gatherpress' ),
 			)
 		);
 
@@ -127,9 +127,9 @@ add_action( 'after_setup_theme', 'gather_underwind_content_width', 0 );
 function gather_underwind_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'gather-underwind' ),
+			'name'          => esc_html__( 'Sidebar', 'gatherpress' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'gather-underwind' ),
+			'description'   => esc_html__( 'Add widgets here.', 'gatherpress' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -144,29 +144,29 @@ add_action( 'widgets_init', 'gather_underwind_widgets_init' );
  */
 function gather_underwind_scripts() {
 	$url = untrailingslashit( get_template_directory_uri() );
-	wp_register_style( 'gather-underwind-style', get_stylesheet_uri(), array(), GATHER_VERSION );
-	wp_style_add_data( 'gather-underwind-style', 'rtl', 'replace' );
+	wp_register_style( 'gatherpress-style', get_stylesheet_uri(), array(), GATHER_VERSION );
+	wp_style_add_data( 'gatherpress-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'gather-underwind-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GATHER_VERSION, true );
+	wp_enqueue_script( 'gatherpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GATHER_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	wp_enqueue_script(
-		'gather-underwind-tailwind',
+		'gatherpress-tailwind',
 		$url . '/build/tailwind.js',
 		array(
 			'jquery',
 		)
 	);
 	wp_enqueue_style(
-		'gather-underwind-tailwind',
+		'gatherpress-tailwind',
 		$url . '/build/tailwind.css',
-		array( 'gather-underwind-style' )
+		array( 'gatherpress-style' )
 	);
 	wp_enqueue_style(
-		'gather-underwind-underscores',
+		'gatherpress-underscores',
 		$url . '/build/underscores.css'
 	);
 }
@@ -194,7 +194,7 @@ function gather_underwind_editor_assets() {
 
 	// Scripts.
 	wp_enqueue_script(
-		'gather-underwind-js',
+		'gatherpress-js',
 		$url . '/build/index.js',
 		array(
 			'wp-blocks',
@@ -206,7 +206,7 @@ function gather_underwind_editor_assets() {
 	);
 	// Styles.
 	wp_enqueue_style(
-		'gather-underwind-editor',
+		'gatherpress-editor',
 		$url . '/build/editor.css',
 		array( 'wp-edit-blocks' )
 	);
@@ -223,7 +223,7 @@ function gather_underwind_assets() {
 	$url = untrailingslashit( get_template_directory_uri() );
 
 	wp_enqueue_style(
-		'gather-underwind-frontend',
+		'gatherpress-frontend',
 		$url . '/build/blocks.css'
 	);
 }
@@ -241,8 +241,8 @@ function create_gather_underwind_panel( $categories, $post ) {
 		$categories,
 		array(
 			array(
-				'slug'  => 'gather-underwind',
-				'title' => __( 'Gather UnderWind Panel', 'gather-underwind' ),
+				'slug'  => 'gatherpress',
+				'title' => __( 'Gather UnderWind Panel', 'gatherpress' ),
 			),
 		)
 	);

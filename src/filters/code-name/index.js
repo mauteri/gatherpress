@@ -10,7 +10,7 @@ import {
 
 addFilter(
   "blocks.registerBlockType",
-  "gather-underwind/extending-register-block-type",
+  "gatherpress/extending-register-block-type",
   extendWithRegisterBlockType
 );
  
@@ -20,12 +20,12 @@ function extendWithRegisterBlockType( settings, name ) {
 	if ( 'core/code' === name ) {
 	
 		// Change the block title
-		settings.title = __( 'Code Snippet', 'gather-underwind');
+		settings.title = __( 'Code Snippet', 'gatherpress');
 
 		// Change the block description
 		settings.description = __(
 			'Use for maximum codiness 💃',
-			'gather-underwind'
+			'gatherpress'
 		);
 
 		// Change block icon

@@ -32,19 +32,19 @@ import classnames from 'classnames';
 
 addFilter(
     'blocks.registerBlockType',
-    'gather-underwind/add-code-attributes',
+    'gatherpress/add-code-attributes',
     addCodeAttributes
 );
 
 addFilter(
     'editor.BlockEdit',
-    'gather-underwind/add-code-inspector-controls',
+    'gatherpress/add-code-inspector-controls',
     addCodeInspectorControls
 );
 
 addFilter(
     'blocks.getSaveElement',
-    'gather-underwind/modify-code-save-settings',
+    'gatherpress/modify-code-save-settings',
     modifyCodeSaveSettings
 );
 
@@ -93,7 +93,7 @@ function addCodeInspectorControls(BlockEdit) {
                 <InspectorControls>
                     <PanelBody
                         title={
-                            __('Custom Code Settings', 'gather-underwind')
+                            __('Custom Code Settings', 'gatherpress')
                         }
                         icon="welcome-widgets-menus"
                         initialOpen={ true }
@@ -103,7 +103,7 @@ function addCodeInspectorControls(BlockEdit) {
                         </PanelRow>
                         <PanelRow>
                             <ToggleControl
-                                label={__('High Contrast', 'gather-underwind')}
+                                label={__('High Contrast', 'gatherpress')}
                                 checked={props.attributes.highContrast}
                                 onChange={highContrast => props.setAttributes({ highContrast })}
                             />
