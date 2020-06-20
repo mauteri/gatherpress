@@ -3,3 +3,4 @@
  */
 
 import './container';
+import './event';
