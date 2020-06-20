@@ -21,7 +21,8 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
         "wptrt/wpthemereview": "^0.2.1",
         "php-parallel-lint/php-parallel-lint": "^1.2.0",
-        "wp-cli/i18n-command": "^2.2"
+        "wp-cli/i18n-command": "^2.2",
+        "phpcompatibility/phpcompatibility-wp": "*"
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
