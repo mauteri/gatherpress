@@ -38,10 +38,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$gather_underwind_description = get_bloginfo( 'description', 'display' );
-			if ( $gather_underwind_description || is_customize_preview() ) :
+			$gatherpress_description = get_bloginfo( 'description', 'display' );
+			if ( $gatherpress_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $gather_underwind_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $gatherpress_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

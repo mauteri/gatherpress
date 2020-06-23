@@ -14,33 +14,33 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses gather_underwind_header_style()
+ * @uses gatherpress_header_style()
  */
-function gather_underwind_custom_header_setup() {
+function gatherpress_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'gather_underwind_custom_header_args',
+			'gatherpress_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'gather_underwind_header_style',
+				'wp-head-callback'   => 'gatherpress_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'gather_underwind_custom_header_setup' );
+add_action( 'after_setup_theme', 'gatherpress_custom_header_setup' );
 
-if ( ! function_exists( 'gather_underwind_header_style' ) ) :
+if ( ! function_exists( 'gatherpress_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see gather_underwind_custom_header_setup().
+	 * @see gatherpress_custom_header_setup().
 	 */
-	function gather_underwind_header_style() {
+	function gatherpress_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

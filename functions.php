@@ -12,7 +12,7 @@ if ( ! defined( 'GATHER_VERSION' ) ) {
 	define( 'GATHER_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'gather_underwind_setup' ) ) :
+if ( ! function_exists( 'gatherpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'gather_underwind_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function gather_underwind_setup() {
+	function gatherpress_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -75,7 +75,7 @@ if ( ! function_exists( 'gather_underwind_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'gather_underwind_custom_background_args',
+				'gatherpress_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'gather_underwind_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'gather_underwind_setup' );
+add_action( 'after_setup_theme', 'gatherpress_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,20 +111,20 @@ add_action( 'after_setup_theme', 'gather_underwind_setup' );
  *
  * @global int $content_width
  */
-function gather_underwind_content_width() {
+function gatherpress_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'gather_underwind_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'gatherpress_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'gather_underwind_content_width', 0 );
+add_action( 'after_setup_theme', 'gatherpress_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function gather_underwind_widgets_init() {
+function gatherpress_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'gatherpress' ),
@@ -137,12 +137,12 @@ function gather_underwind_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'gather_underwind_widgets_init' );
+add_action( 'widgets_init', 'gatherpress_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function gather_underwind_scripts() {
+function gatherpress_scripts() {
 	$url = untrailingslashit( get_template_directory_uri() );
 	wp_register_style( 'gatherpress-style', get_stylesheet_uri(), array(), GATHER_VERSION );
 	wp_style_add_data( 'gatherpress-style', 'rtl', 'replace' );
@@ -170,17 +170,17 @@ function gather_underwind_scripts() {
 		$url . '/build/underscores.css'
 	);
 }
-add_action( 'wp_enqueue_scripts', 'gather_underwind_scripts' );
+add_action( 'wp_enqueue_scripts', 'gatherpress_scripts' );
 
-add_action( 'init', 'load_gather_underwind_init' );
+add_action( 'init', 'load_gatherpress_init' );
 /**
- * load_gather_underwind_init
+ * load_gatherpress_init
  *
  * Acticvate php files found in folders
  *
  * @return null
  */
-function load_gather_underwind_init() {
+function load_gatherpress_init() {
 	if ( file_exists( __DIR__ . '/inc' ) && is_dir( __DIR__ . '/inc' ) ) {
 		foreach ( glob( __DIR__ . '/inc/*.php' ) as $filename ) {
 			include $filename;
@@ -189,7 +189,7 @@ function load_gather_underwind_init() {
 }
 
 
-function gather_underwind_editor_assets() {
+function gatherpress_editor_assets() {
 	$url = untrailingslashit( get_template_directory_uri() );
 
 	// Scripts.
@@ -212,14 +212,14 @@ function gather_underwind_editor_assets() {
 	);
 }
 
-add_action( 'enqueue_block_editor_assets', 'gather_underwind_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'gatherpress_editor_assets' );
 
 /**
- * [gather_underwind_assets] Hook assets into the editor.
+ * [gatherpress_assets] Hook assets into the editor.
  *
  * @return [type] [description]
  */
-function gather_underwind_assets() {
+function gatherpress_assets() {
 	$url = untrailingslashit( get_template_directory_uri() );
 
 	wp_enqueue_style(
@@ -228,7 +228,7 @@ function gather_underwind_assets() {
 	);
 }
 
-add_action( 'enqueue_block_assets', 'gather_underwind_assets' );
+add_action( 'enqueue_block_assets', 'gatherpress_assets' );
 
 /**
  * Adding a block category creates a Panel
@@ -236,7 +236,7 @@ add_action( 'enqueue_block_assets', 'gather_underwind_assets' );
  *  background: rgba(128, 0, 0, .4);
  * }
  */
-function create_gather_underwind_panel( $categories, $post ) {
+function create_gatherpress_panel( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
@@ -247,4 +247,4 @@ function create_gather_underwind_panel( $categories, $post ) {
 		)
 	);
 }
-add_filter( 'block_categories', 'create_gather_underwind_panel', 10, 2 );
+add_filter( 'block_categories', 'create_gatherpress_panel', 10, 2 );
