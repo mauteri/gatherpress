@@ -3,7 +3,7 @@ $event    = GatherPress\Inc\Event::get_instance();
 $members  = count_users()['total_users'];
 $logo     = get_custom_logo();
 $calendar = $event->get_calendar_links( get_the_ID() );
-?>
+?> 
 <section> 
 
 	<div class="media mb-4">
