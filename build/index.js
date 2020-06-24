@@ -385,8 +385,8 @@ var Edit = function Edit(props) {
   };
 
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", null, "Today's List"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["RichText"], {
-    tagName: "ul",
-    multiline: "li",
+    tagName: "p" // multiline="li"
+    ,
     className: className,
     onChange: onChangeContent,
     value: content,
@@ -463,8 +463,8 @@ var Save = function Save(props) {
       className = props.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("h3", null, "Today's List"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["RichText"].Content, {
     className: className,
-    tagName: "ul",
-    multiline: "li",
+    tagName: "p" // multiline="li"
+    ,
     value: content
   }));
 };

@@ -16,8 +16,8 @@ const Save = ( props ) => {
 			<h3>Today's List</h3>
 			<RichText.Content
 				className={ className }
-				tagName="ul"
-				multiline="li"
+				tagName="p"
+				// multiline="li"
 				value={ content }
 			/>
 		</>

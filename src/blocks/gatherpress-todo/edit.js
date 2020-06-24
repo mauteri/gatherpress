@@ -22,8 +22,8 @@ const Edit = ( props ) => {
 		<>
 			<h3>Today's List</h3>
 			<RichText
-				tagName="ul"
-				multiline="li"
+				tagName="p"
+				// multiline="li"
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }
