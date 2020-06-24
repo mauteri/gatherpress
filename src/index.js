@@ -4,6 +4,7 @@
 
 import './blocks';
 import './filters';
+import './plugins';
 
 // svg code
 import gatherPressIcon from './gatherpress-icon';

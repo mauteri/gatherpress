@@ -2,7 +2,7 @@
 /**
  * Second Gather Theme Customizer
  *
- * @package Gather_UnderWind
+ * @package GatherPress
  */
 
 /**

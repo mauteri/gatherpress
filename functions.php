@@ -4,13 +4,27 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Gather_UnderWind
+ * @package GatherPress
  */
 
 if ( ! defined( 'GATHER_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'GATHER_VERSION', '1.0.0' );
 }
+
+// Constants.
+define( 'GATHERPRESS_CORE_PATH', __DIR__ );
+define( 'GATHERPRESS_CORE_URL', get_template_directory_uri() );
+define( 'GATHERPRESS_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
+define( 'GATHERPRESS_REST_NAMESPACE', 'gatherpress/v1' );
+
+// Required files.
+require_once GATHERPRESS_CORE_PATH . '/inc/helpers/autoloader.php';
+require_once GATHERPRESS_CORE_PATH . '/plugins/jetpack-tweaks/css-sanitization.php';
+require_once GATHERPRESS_CORE_PATH . '/plugins/wordcamp-remote-css/bootstrap.php';
+
+// Kick things off!
+\GatherPress\Inc\Setup::get_instance();
 
 if ( ! function_exists( 'gatherpress_setup' ) ) :
 	/**
@@ -183,7 +197,7 @@ add_action( 'init', 'load_gatherpress_init' );
 function load_gatherpress_init() {
 	if ( file_exists( __DIR__ . '/inc' ) && is_dir( __DIR__ . '/inc' ) ) {
 		foreach ( glob( __DIR__ . '/inc/*.php' ) as $filename ) {
-			include $filename;
+			// include $filename;
 		}
 	}
 }
@@ -242,9 +256,32 @@ function create_gatherpress_panel( $categories, $post ) {
 		array(
 			array(
 				'slug'  => 'gatherpress',
-				'title' => __( 'Gather UnderWind Panel', 'gatherpress' ),
+				'title' => __( 'GatherPress Panel', 'gatherpress' ),
 			),
 		)
 	);
 }
 add_filter( 'block_categories', 'create_gatherpress_panel', 10, 2 );
+
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}

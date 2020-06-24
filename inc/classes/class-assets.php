@@ -30,8 +30,7 @@ class Assets {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-		add_action( 'enqueue_block_editor_assets', [ $this, 'block_enqueue_scripts' ] );
-
+		// add_action( 'enqueue_block_editor_assets', [ $this, 'block_enqueue_scripts' ] );
 	}
 
 	/**
@@ -42,11 +41,7 @@ class Assets {
 		$attendee = Attendee::get_instance();
 		$event    = Event::get_instance();
 
-		wp_enqueue_style( 'gatherpress-style-css',  $this->_build . 'style.css', [], GATHERPRESS_THEME_VERSION );
-
-		wp_enqueue_style( 'gatherpress-bootstrap-css', $this->_build . 'bootstrap_css.css', [], GATHERPRESS_THEME_VERSION );
-
-		wp_enqueue_script( 'gatherpress-bootstrap-js', $this->_build . 'bootstrap_js.js', [ 'jquery' ], GATHERPRESS_THEME_VERSION, true );
+		wp_enqueue_style( 'gatherpress-style-css', $this->_build . 'style.css', [], GATHERPRESS_THEME_VERSION );
 
 		if ( is_singular( 'gp_event' ) ) {
 			global $post;

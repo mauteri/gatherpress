@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Gather_UnderWind
+ * @package GatherPress
  */
 
 get_header();
