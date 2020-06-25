@@ -51,6 +51,7 @@
 	},
 	"dependencies": {
 		"jquery": ">=3.5.0",
+		"tailwindcss": "^1.4.6",
 		"tether": "^1.4.7"
 	}
 }
