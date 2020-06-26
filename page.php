@@ -12,7 +12,7 @@
  * @package GatherPress
  */
 
-get_header();
+get_header( 'page' );
 ?>
 
 	<main id="primary" class="site-main">
@@ -35,4 +35,4 @@ get_header();
 
 <?php
 get_sidebar();
-get_footer();
+get_footer( 'page' );
