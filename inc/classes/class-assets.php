@@ -12,7 +12,7 @@ class Assets {
 
 	use Singleton;
 
-	protected $_build = GATHERPRESS_CORE_URL . '/assets/build/';
+	protected $_build = GATHERPRESS_CORE_URL . '/build/';
 
 	/**
 	 * Assets constructor.
@@ -29,7 +29,7 @@ class Assets {
 	protected function _setup_hooks() : void {
 
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+		// add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 		// add_action( 'enqueue_block_editor_assets', [ $this, 'block_enqueue_scripts' ] );
 	}
 
@@ -42,6 +42,8 @@ class Assets {
 		$event    = Event::get_instance();
 
 		wp_enqueue_style( 'gatherpress-style-css', $this->_build . 'style.css', [], GATHERPRESS_THEME_VERSION );
+
+		wp_enqueue_style( 'tailwind-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.5/tailwind.min.css' );
 
 		if ( is_singular( 'gp_event' ) ) {
 			global $post;
@@ -80,8 +82,7 @@ class Assets {
 	 */
 	public function admin_enqueue_scripts() : void {
 
-		wp_enqueue_style( 'gatherpress-admin-css', $this->_build . 'admin.css', [], GATHERPRESS_THEME_VERSION );
-
+		// wp_enqueue_style( 'gatherpress-admin-css', $this->_build . 'admin.css', [], GATHERPRESS_THEME_VERSION );
 	}
 
 	/**
