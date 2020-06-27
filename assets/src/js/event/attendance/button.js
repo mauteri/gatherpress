@@ -71,52 +71,61 @@ export class AttendanceButton extends Component {
 	}
 
 	render() {
-		const hasEventPast = ( '1' === GatherPress.has_event_past ) ? 'disabled' : '';
+		//const hasEventPast = ( '1' === GatherPress.has_event_past ) ? 'opacity-50 cursor-not-allowed' : '';
+		const hasEventPast = ( '1' === GatherPress.has_event_past ) ? '' : '';
 
 		return(
 			<div
-				className  = 'btn-group'
+				className  = 'group inline-block relative float-right'
 			>
-				<div
-					className  = 'btn-group'
-					role       = 'group'
+				<button
+					type          = 'button'
+					className     = { 'bg-blue-500 hover:bg-blue-700 text-white text-2xl py-2 px-4 rounded inline-flex items-center ' + hasEventPast }
+					data-toggle   = 'dropdown'
+					aria-haspopup = 'true'
+					aria-expanded = 'false'
 				>
-					<div
-						className = 'btn-group'
-						role      = 'group'
+					<span
+						className = 'mr-1'
 					>
-						<button
-							type          = 'button'
-							className     = { 'btn btn-primary btn-lg dropdown-toggle ' + hasEventPast }
-							data-toggle   = 'dropdown'
-							aria-haspopup = 'true'
-							aria-expanded = 'false'
+						{ this.state.inputValue }
+					</span>
+					<svg
+						className = 'fill-current h-4 w-4'
+						xmlns     = 'http://www.w3.org/2000/svg'
+						viewBox   = '0 0 20 20'
+					>
+						<path
+						d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+						/>
+					</svg>
+				</button>
+				<ul
+					className       = 'absolute right-0 z-10 hidden text-gray-700 pt-1 group-hover:block'
+				>
+					<li>
+						<a
+							className  = 'rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap'
+							href       = '#'
+							data-value = 'attending'
+							onClick    = { ( evt ) => this.changeSelection( evt ) }
 						>
+							{ __( 'Yes, I would like to attend this event.', 'gatherpress' ) }
+						</a>
 
-							{ this.state.inputValue }
-						</button>
-						<div
-							className       = 'dropdown-menu'
+					</li>
+					<li>
+						<a
+						className  = 'rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap'
+						href       = '#'
+						data-value = 'not_attending'
+						onClick    = { ( evt ) => this.changeSelection( evt ) }
 						>
-							<a
-								className  = 'dropdown-item'
-								href       = '#'
-								data-value = 'attending'
-								onClick    = { ( evt ) => this.changeSelection( evt ) }
-							>
-								{ __( 'Yes, I would like to attend this event.', 'gatherpress' ) }
-							</a>
-							<a
-								className  = 'dropdown-item'
-								href       = '#'
-								data-value = 'not_attending'
-								onClick    = { ( evt ) => this.changeSelection( evt ) }
-							>
-								{ __( 'No, I cannot attend this event.', 'gatherpress' ) }
-							</a>
-						</div>
-					</div>
-				</div>
+							{ __( 'No, I cannot attend this event.', 'gatherpress' ) }
+						</a>
+
+					</li>
+				</ul>
 			</div>
 		);
 	}

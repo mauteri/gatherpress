@@ -13,22 +13,14 @@
 
 		</div><!-- #content -->
 
-		<footer id="colophon" class="site-footer bg-dark text-white-50 mt-4">
-			<div class="container-fluid py-3">
-				<div class="row">
-					<div class="col-md-6 small">
-						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gatherpress' ) ); ?>" class="text-white">
-							<?php
-							esc_html_e( 'Proudly powered by WordPress', 'gatherpress' );
-							?>
-						</a>
-					</div>
-					<div class="col-md-6 text-right small align-self-end">
-						<?php
-						printf( esc_html__( 'Copyright &copy; %d GatherPress. All rights reserved.', 'gatherpress' ), date( 'Y' ) );
-						?>
-					</div>
-				</div>
+		<footer id="colophon" class="site-footer bg-gray-800 grid grid-cols-2 gap-4 p-4 text-sm">
+			<div class="text-left">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gatherpress' ) ); ?>" class="text-white hover:underline">
+					<?php esc_html_e( 'Proudly powered by WordPress', 'gatherpress' ); ?>
+				</a>
+			</div>
+			<div class="text-gray-500 text-right">
+				<?php printf( esc_html__( 'Copyright &copy; %d GatherPress. All rights reserved.', 'gatherpress' ), date( 'Y' ) ); ?>
 			</div>
 		</footer>
 	</div><!-- #page -->

@@ -3,6 +3,7 @@ const path = require( 'path' );
 const postcssPresetEnv = require( 'postcss-preset-env' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const IgnoreEmitPlugin = require( 'ignore-emit-webpack-plugin' );
+const tailwindcss = require('tailwindcss');
 
 const production = process.env.NODE_ENV === '';
 
@@ -12,6 +13,7 @@ module.exports = {
 		index: path.resolve( process.cwd(), 'src', 'index.js' ),
 		bootstrap_js: path.resolve( process.cwd(), 'src/bootstrap', 'bootstrap.js' ),
 		bootstrap_css: path.resolve( process.cwd(), 'src/bootstrap', 'bootstrap.scss' ),
+		tailwind: path.resolve( process.cwd(), 'src', 'tailwind.scss' ),
 		style: path.resolve( process.cwd(), 'src', 'style.scss' ),
 		script: path.resolve( process.cwd(), 'src/js', 'index.js' ),
 		event_single: path.resolve( process.cwd(), 'src/js/event', 'single.js' ),
@@ -78,6 +80,7 @@ module.exports = {
 										'nesting-rules': true,
 									},
 								} ),
+								tailwindcss('./tailwind.config.js'),
 							],
 						},
 					},
@@ -90,6 +93,6 @@ module.exports = {
 		new MiniCssExtractPlugin( {
 			filename: '[name].css',
 		} ),
-		new IgnoreEmitPlugin( [ 'editor.js', 'style.js', 'bootstrap.js', 'bootstrap.css', 'bootstrap_css.js' ] ),
+		new IgnoreEmitPlugin( [ 'editor.js', 'style.js', 'tailwind.js', 'bootstrap.js', 'bootstrap.css', 'bootstrap_css.js' ] ),
 	],
 };

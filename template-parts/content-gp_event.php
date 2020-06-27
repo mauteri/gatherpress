@@ -14,18 +14,18 @@ $event = GatherPress\Inc\Event::get_instance();
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
 
-			<div class="d-flex flex-row justify-content-between align-items-end">
-				<div class="p-2">
-					<h3 class="h5">
+			<div class="grid grid-cols-6 gap-4">
+				<div class="col-span-4">
+					<h3 class="text-2xl">
 						<?php echo esc_html( $event->get_datetime_start( get_the_ID(), 'l, F j, Y' ) ); ?>
 					</h3>
 				</div>
-				<div class="p-2">
-					<div id="attendance_button_container" class="float-right"></div>
+				<div class="col-span-2">
+					<div id="attendance_button_container"></div>
 				</div>
 			</div>
 
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title text-4xl">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 
 		<?php gatherpress_post_thumbnail(); ?>
