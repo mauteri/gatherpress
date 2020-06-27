@@ -71,8 +71,7 @@ export class AttendanceButton extends Component {
 	}
 
 	render() {
-		//const hasEventPast = ( '1' === GatherPress.has_event_past ) ? 'opacity-50 cursor-not-allowed' : '';
-		const hasEventPast = ( '1' === GatherPress.has_event_past ) ? '' : '';
+		const hasEventPast = ( '1' === GatherPress.has_event_past ) ? 'opacity-50 cursor-not-allowed' : '';
 
 		return(
 			<div

@@ -28,48 +28,69 @@ export class Attendance extends Component {
 			{
 				name: __( 'Attending', 'gatherpress' ),
 				slug: 'attending',
-				active: '',
 			},
 			{
 				name: __( 'Waitlist', 'gatherpress' ),
 				slug: 'waitlist',
-				active: '',
 			},
 			{
 				name: __( 'Not Attending', 'gatherpress' ),
 				slug: 'not_attending',
-				active: '',
 			},
 		];
-
-	}
-
-	displayNavigation() {
-		let nav     = [],
-			status  = GatherPress.current_user_status;
-
-		status = ( '' !== status ) ? status : 'attending';
 
 		for ( let i = 0; i < this.pages.length; i++ ) {
 			let item = this.pages[ i ];
 
-			item.active = ( status === item.slug ) ? 'active' : '';
+			if ( GatherPress.current_user_status === item.slug ) {
+				this.state.activeTab = i;
+				break;
+			}
+		}
+	}
+
+	tabUpdate( e ) {
+		e.preventDefault();
+		let tab = e.target.dataset.id;
+		for ( let i = 0; i < this.pages.length; i++ ) {
+			let item = this.pages[ i ];
+
+			if ( tab === item.slug ) {
+				this.setState({
+					activeTab: i
+				});
+				break;
+			}
+		}
+	}
+
+	displayNavigation() {
+		let nav     = [];
+
+		for ( let i = 0; i < this.pages.length; i++ ) {
+			let item = this.pages[ i ],
+				active = ( i === this.state.activeTab ) ? 'border-l border-t border-r rounded-t active' : '';
 
 			nav.push(
-				<a
-					ref           = { input => this.navItem = input }
-					key           = { item.slug }
-					className     = { 'nav-item nav-link ' + item.active }
-					id            = { 'nav-' + item.slug + '-tab' }
-					data-id       = { item.slug }
-					data-toggle   = 'tab'
-					href          = { '#nav-' + item.slug }
-					role          = 'tab'
-					aria-controls = { 'nav-' + item.slug }
-					aria-selected = { ( '' === item.active ) ? 'false' : 'true' }
+				<li
+					className = '-mb-px mr-1'
 				>
-					{ item.name }
-				</a>
+					<a
+						ref           = { input => this.navItem = input }
+						key           = { item.slug }
+						className     = { 'bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold ' + active }
+						id            = { 'nav-' + item.slug + '-tab' }
+						data-id       = { item.slug }
+						data-toggle   = 'tab'
+						href          = { '#nav-' + item.slug }
+						role          = 'tab'
+						aria-controls = { 'nav-' + item.slug }
+						// aria-selected = { ( '' === item.active ) ? 'false' : 'true' }
+						onClick       = { ( e ) => this.tabUpdate( e ) }
+					>
+						{ item.name }
+					</a>
+				</li>
 			);
 		}
 
@@ -78,21 +99,16 @@ export class Attendance extends Component {
 	}
 
 	displayContent() {
-
-		let content = [],
-			status  = GatherPress.current_user_status;
-
-		status = ( '' !== status ) ? status : 'attending';
+		let content = [];
 
 		for ( let i = 0; i < this.pages.length; i++ ) {
-			let item = this.pages[i];
-
-			item.active = ( status === item.slug ) ? 'active' : '';
+			let item = this.pages[i],
+				active = ( i === this.state.activeTab ) ? 'block' : 'hidden';
 
 			content.push(
 				<div
 					key             = { item.slug }
-					className       = { 'tab-pane fade show ' + item.active }
+					className       = { 'tab-pane ' + active }
 					id              = { 'nav-' + item.slug }
 					role            = 'tabpanel'
 					aria-labelledby = { 'nav-' + item.slug + '-tab' }
@@ -113,9 +129,9 @@ export class Attendance extends Component {
 
 	getAttendees( slug ) {
 
-		if ( 'undefined' === typeof this.state.attendanceList[ slug ] ) {
-			return;
-		}
+		// if ( 'undefined' === typeof this.state.attendanceList[ slug ] ) {
+		// 	return;
+		// }
 
 		const attendeeData = this.state.attendanceList[ slug ].attendees;
 
@@ -167,13 +183,13 @@ export class Attendance extends Component {
 				className = 'mt-4'
 			>
 				<nav>
-					<div
-					className = 'nav nav-tabs mb-4'
-					id        = 'attendance-nav'
-					role      = 'tablist'
+					<ul
+						className = 'flex border-b'
+						id        = 'attendance-nav'
+						role      = 'tablist'
 					>
 						{ this.displayNavigation() }
-					</div>
+					</ul>
 				</nav>
 				<div
 					className = 'tab-content p-3'
