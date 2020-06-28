@@ -3,7 +3,7 @@ const path = require( 'path' );
 const postcssPresetEnv = require( 'postcss-preset-env' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const IgnoreEmitPlugin = require( 'ignore-emit-webpack-plugin' );
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require( 'tailwindcss' );
 
 const production = process.env.NODE_ENV === '';
 
