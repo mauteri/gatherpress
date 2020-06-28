@@ -11,8 +11,6 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		index: path.resolve( process.cwd(), 'src', 'index.js' ),
-		bootstrap_js: path.resolve( process.cwd(), 'src/bootstrap', 'bootstrap.js' ),
-		bootstrap_css: path.resolve( process.cwd(), 'src/bootstrap', 'bootstrap.scss' ),
 		tailwind: path.resolve( process.cwd(), 'src', 'tailwind.scss' ),
 		style: path.resolve( process.cwd(), 'src', 'style.scss' ),
 		script: path.resolve( process.cwd(), 'src/js', 'index.js' ),
@@ -93,6 +91,6 @@ module.exports = {
 		new MiniCssExtractPlugin( {
 			filename: '[name].css',
 		} ),
-		new IgnoreEmitPlugin( [ 'editor.js', 'style.js', 'tailwind.js', 'bootstrap.js', 'bootstrap.css', 'bootstrap_css.js' ] ),
+		new IgnoreEmitPlugin( [ 'editor.js', 'style.js', 'tailwind.js', ] ),
 	],
 };

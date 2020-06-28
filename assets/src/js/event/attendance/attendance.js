@@ -115,7 +115,7 @@ export class Attendance extends Component {
 				>
 					<div
 						key       = { item.slug }
-						className = 'd-flex flex-row flex-wrap'
+						className = 'flex flex-row flex-wrap'
 					>
 						{ this.getAttendees( item.slug ) }
 					</div>
@@ -129,9 +129,9 @@ export class Attendance extends Component {
 
 	getAttendees( slug ) {
 
-		// if ( 'undefined' === typeof this.state.attendanceList[ slug ] ) {
-		// 	return;
-		// }
+		if ( 'undefined' === typeof this.state.attendanceList[ slug ] ) {
+			return;
+		}
 
 		const attendeeData = this.state.attendanceList[ slug ].attendees;
 
@@ -149,7 +149,7 @@ export class Attendance extends Component {
 						href = { attendee.profile }
 					>
 						<img
-							className = 'img-thumbnail'
+							className = 'p-1 border'
 							alt       = { attendee.name }
 							title     = { attendee.name }
 							src       = { attendee.photo }
@@ -159,13 +159,14 @@ export class Attendance extends Component {
 						className = 'mt-2 mb-0'
 					>
 						<a
+							className = 'text-blue-500 hover:text-blue-800'
 							href = { attendee.profile }
 						>
 							{ attendee.name }
 						</a>
 					</h5>
 					<h6
-						className = 'text-muted'
+						className = 'text-gray-600'
 					>
 						{ attendee.role }
 					</h6>

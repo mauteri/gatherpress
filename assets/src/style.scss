@@ -2,9 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+.entry-content {
+	ul,
+	ol {
+		@apply .mt-0 .mr-0 .mb-6 .ml-12;
+	}
+
+	ul {
+		@apply .list-disc;
+	}
+
+	ol {
+		@apply .list-decimal;
+	}
+
+	li > ul,
+	li > ol {
+		@apply mb-0 .ml-24;
+	}
+}
 
 /*
-@import "~bootstrap";
+@todo figure out rest of Sass setup.
 @import "./common.scss";
 @import "./block-editor/style.scss";
 */

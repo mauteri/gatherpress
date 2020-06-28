@@ -1,8 +1,7 @@
 module.exports = {
 	purge: [
-		// false
-		// '../*.php',
-		// '../template-parts/*.php'
+		// @todo figure out purge.
+		false
 	],
 	theme: {
 		extend: {},
