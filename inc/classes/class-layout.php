@@ -23,17 +23,22 @@ class Layout {
 
 	protected function _setup_hooks() {
 
-		add_action( 'gatherpress_after_header', [ $this, 'homepage_carousel' ] );
+		add_action( 'gatherpress_before_content', [ $this, 'upcoming_events' ] );
 
 	}
 
-	public function homepage_carousel() {
+	public function upcoming_events() {
 
 		if ( is_home() ) {
 			echo Helper::render_template(
-				GATHERPRESS_CORE_PATH . '/template-parts/homepage-carousel.php',
+				GATHERPRESS_CORE_PATH . '/template-parts/upcoming-events.php',
 				[]
 			);
+			?>
+			<h2 class="text-3xl mb-4">
+				<?php echo esc_html_e( 'Past Events' ); ?>
+			</h2>
+			<?php
 		}
 	}
 

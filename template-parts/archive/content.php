@@ -9,7 +9,7 @@
 $event = GatherPress\Inc\Event::get_instance();
 ?>
 
-<article class="mb-4 border-bottom">
+<article class="mb-4 pb-4 border-b">
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		the_post_thumbnail( 'post-thumbnail', [
@@ -22,9 +22,9 @@ $event = GatherPress\Inc\Event::get_instance();
 		?>
 	</a>
 	<div>
-		<h5><?php echo esc_html( $event->get_datetime_start( get_the_ID() ) ); ?></h5>
-		<h2>
-			<a href="<?php the_permalink(); ?>">
+		<h5 class="text-xl"><?php echo esc_html( $event->get_datetime_start( get_the_ID() ) ); ?></h5>
+		<h2 class="text-3xl">
+			<a class="text-blue-500 hover:text-blue-800" href="<?php the_permalink(); ?>">
 				<?php the_title(); ?>
 			</a>
 		</h2>

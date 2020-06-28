@@ -37,7 +37,6 @@
 		"@wordpress/date": "^3.9.0",
 		"@wordpress/i18n": "^3.12.0",
 		"@wordpress/scripts": "^5.1.0",
-		"bootstrap": "^4.4.1",
 		"css-loader": "^3.2.0",
 		"file-loader": "^6.0.0",
 		"ignore-emit-webpack-plugin": "^2.0.2",
@@ -51,6 +50,7 @@
 	},
 	"dependencies": {
 		"jquery": ">=3.5.0",
+		"tailwindcss": "^1.4.6",
 		"tether": "^1.4.7"
 	}
 }
