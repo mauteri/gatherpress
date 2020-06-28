@@ -42,24 +42,18 @@ class Assets {
 		$attendee = Attendee::get_instance();
 		$event    = Event::get_instance();
 
-//		wp_enqueue_style( 'tailwind-css', $this->_build . 'tailwind.css', [], GATHERPRESS_THEME_VERSION );
-
-//		wp_enqueue_style( 'gatherpress-bootstrap-css', $this->_build . 'bootstrap_css.css', [], GATHERPRESS_THEME_VERSION );
-//		//
-//		wp_enqueue_script( 'gatherpress-bootstrap-js', $this->_build . 'bootstrap_js.js', [ 'jquery' ], GATHERPRESS_THEME_VERSION, true );
-		wp_enqueue_style( 'gatherpress-style-css',  $this->_build . 'style.css', [], GATHERPRESS_THEME_VERSION );
+		$asset = require_once( GATHERPRESS_CORE_PATH . '/assets/build/style.asset.php' );
+		wp_enqueue_style( 'gatherpress-style',  $this->_build . 'style.css', [], $asset['version'] );
 
 		if ( is_singular( 'gp_event' ) ) {
 			global $post;
 
+			$asset = require_once( GATHERPRESS_CORE_PATH . '/assets/build/event_single.asset.php' );
 			wp_enqueue_script(
-				'gatherpress-event-single-js',
+				'gatherpress-event-single',
 				$this->_build . 'event_single.js',
-				[
-					'wp-i18n',
-					'wp-element',
-				],
-				GATHERPRESS_THEME_VERSION,
+				$asset['dependencies'],
+				$asset['version'],
 				true
 			);
 
@@ -67,7 +61,7 @@ class Assets {
 			$attendee_status = $attendee->get_attendee( $post->ID, $user_id );
 
 			wp_localize_script(
-				'gatherpress-event-single-js',
+				'gatherpress-event-single',
 				'GatherPress',
 				[
 					'has_event_past'      => $event->has_event_past( $post->ID ),
@@ -79,6 +73,7 @@ class Assets {
 				]
 			);
 		}
+
 	}
 
 	/**
@@ -97,23 +92,19 @@ class Assets {
 
 		$post_id = $GLOBALS['post']->ID;
 
-		wp_enqueue_style( 'gatherpress-editor-css', $this->_build . 'editor.css', [ 'wp-edit-blocks' ], GATHERPRESS_THEME_VERSION );
+		$asset = require_once( GATHERPRESS_CORE_PATH . '/assets/build/editor.asset.php' );
+		wp_enqueue_style( 'gatherpress-editor', $this->_build . 'editor.css', [ 'wp-edit-blocks' ], $asset['version'] );
 
+		$asset = require_once( GATHERPRESS_CORE_PATH . '/assets/build/index.asset.php' );
 		wp_enqueue_script(
-			'gatherpress-index-js',
+			'gatherpress-index',
 			$this->_build . 'index.js',
-			[
-				'wp-blocks',
-				'wp-i18n',
-				'wp-element',
-				'wp-plugins',
-				'wp-edit-post',
-			],
-			GATHERPRESS_THEME_VERSION
+			$asset['dependencies'],
+			$asset['version']
 		);
 
 		wp_localize_script(
-			'gatherpress-index-js',
+			'gatherpress-index',
 			'GatherPress',
 			[
 				'nonce'            => wp_create_nonce( 'wp_rest' ),

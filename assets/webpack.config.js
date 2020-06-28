@@ -78,7 +78,7 @@ module.exports = {
 										'nesting-rules': true,
 									},
 								} ),
-								tailwindcss('./tailwind.config.js'),
+								tailwindcss( './tailwind.config.js' ),
 							],
 						},
 					},

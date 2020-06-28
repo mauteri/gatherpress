@@ -24,6 +24,7 @@ require_once GATHERPRESS_CORE_PATH . '/plugins/wordcamp-remote-css/bootstrap.php
 // Kick things off!
 \GatherPress\Inc\Setup::get_instance();
 
+// @todo review everything below and move to appropriate file.
 if ( ! function_exists( 'gatherpress_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

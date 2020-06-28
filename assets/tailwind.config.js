@@ -1,8 +1,6 @@
 module.exports = {
-	purge: [
-		// @todo figure out purge.
-		false
-	],
+	// @todo figure out purge.
+	purge: [],
 	theme: {
 		extend: {},
 	},
