@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .entry-content {
 	ul,
 	ol {
@@ -27,3 +28,5 @@
 @import "./common.scss";
 @import "./block-editor/style.scss";
 */
+
+@import "./block-editor/style.scss";

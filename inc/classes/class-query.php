@@ -33,7 +33,6 @@ class Query {
 	}
 
 	public function get_upcoming_events() : \WP_Query {
-
 		remove_filter( 'posts_clauses', [ $this, 'order_past_events' ] );
 		add_filter( 'posts_clauses', [ $this, 'order_upcoming_events' ] );
 

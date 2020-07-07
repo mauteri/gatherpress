@@ -16,7 +16,7 @@ module.exports = {
 		script: path.resolve( process.cwd(), 'src/js', 'index.js' ),
 		event_single: path.resolve( process.cwd(), 'src/js/event', 'single.js' ),
 		editor: path.resolve( process.cwd(), 'src', 'editor.scss' ),
-		admin: path.resolve( process.cwd(), 'src', 'admin.scss' ),
+		// admin: path.resolve( process.cwd(), 'src', 'admin.scss' ),
 	},
 	optimization: {
 		...defaultConfig.optimization,
