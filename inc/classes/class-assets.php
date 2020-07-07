@@ -99,7 +99,13 @@ class Assets {
 		wp_enqueue_script(
 			'gatherpress-index',
 			$this->_build . 'index.js',
-			[ 'wp-edit-blocks' ],
+			[
+				'wp-blocks',
+				'wp-i18n',
+				'wp-element',
+				'wp-plugins',
+				'wp-edit-post',
+			],
 			$asset['version']
 		);
 
