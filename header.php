@@ -22,11 +22,21 @@
 
 <body <?php body_class(); ?>>
 <header class="bg-gray-800 p-4">
-	<h1 class="text-4xl">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-white">
-			<?php bloginfo( 'name' ); ?>
-		</a>
-	</h1>
+	<div class="flex">
+		<div class="">
+			<?php echo wp_kses_post( get_custom_logo() ); ?>
+		</div>
+		<div class="text-white">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<h1 class="text-6xl">
+					<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+				</h1>
+				<h2 class="text-2xl">
+					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+				</h2>
+			</a>
+		</div>
+	</div>
 </header>
 
 <?php do_action( 'gatherpress_after_header' ); ?>

@@ -34,6 +34,22 @@ class Helper {
 
 	}
 
+	public static function anchor_classes() {
+
+		return apply_filters( 'gatherpress_anchor_classes', 'text-blue-500 hover:text-blue-800' );
+
+	}
+
+	public static function button_classes() {
+
+		return apply_filters( 'gatherpress_button_classes', '' );
+
+	}
+
+	public static function button_primary_classes() {
+
+	}
+
 }
 
 //EOF

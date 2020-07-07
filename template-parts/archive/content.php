@@ -24,7 +24,7 @@ $event = GatherPress\Inc\Event::get_instance();
 	<div>
 		<h5 class="text-xl"><?php echo esc_html( $event->get_datetime_start( get_the_ID() ) ); ?></h5>
 		<h2 class="text-3xl">
-			<a class="text-blue-500 hover:text-blue-800" href="<?php the_permalink(); ?>">
+			<a class="<?php echo esc_attr( GatherPress\Inc\Helper::anchor_classes() ); ?>" href="<?php the_permalink(); ?>">
 				<?php the_title(); ?>
 			</a>
 		</h2>
